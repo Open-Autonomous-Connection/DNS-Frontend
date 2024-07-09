@@ -241,6 +241,7 @@ function domain_exists($con, $name, $topLevelDomain) {
 }
 
 function top_level_domain_exists($con, $topLevelDomain) {
+    if (strcasecmp($topLevelDomain, "oac") == 0) return true;
     $query = "SELECT * FROM topleveldomains WHERE name = '$topLevelDomain'";
     $result = mysqli_query($con, $query);
 
