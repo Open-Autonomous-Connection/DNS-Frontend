@@ -16,7 +16,7 @@ global $con;
 $user_data = check_login($con);
 
 if ($user_data != null) {
-    header('Location: ../dashboard.php');
+    header('Location: dashboard.php');
     die();
 }
 
@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (username_exists($con, $user)) echo "Username already exists.";
         else {
             if (create_account($con, $user, $pass)) {
-                header('Location: login.php');
+                header('Location: auth/login.php');
                 die();
             } else echo "Failed to register.";
         }
@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="submit" value="Register" />
     </form>
 
-    <a href="login.php">Login</a>
+    <a href="auth/login.php">Login</a>
 </div>
 
 </body>

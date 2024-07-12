@@ -16,7 +16,7 @@ global $con;
 $user_data = check_login($con);
 
 if ($user_data != null) {
-    header('Location: ../dashboard.php');
+    header('Location: dashboard.php');
     die();
 }
 
@@ -59,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="submit" value="Login" />
     </form>
 
-    <a href="register.php">Register</a>
+    <a href="auth/register.php">Register</a>
 </div>
 
 </body>
